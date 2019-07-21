@@ -21,21 +21,25 @@ public class App
         EmployeeDatabase.employeeList.add(new Employee("sad","as",'K',2));
         System.out.println(EmployeeDatabase.employeeList);
 
-        System.out.println("1. dodoaj pracownika");
-        System.out.println("2. pokaż pracownika");
         Scanner input = new Scanner(System.in);
-        int value = input.nextInt();
+
 
         EmployeeController controller = new EmployeeController(new EmployeeView(), new EmployeeService());
+        while(true) {
 
-        switch (value){
-            case 1:
-                controller.prepareEmployee();
-                break;
-            case 2:
-                controller.showEmployee();
-                break;
+            System.out.println("1. dodoaj pracownika");
+            System.out.println("2. pokaż pracowników");
+            int value = input.nextInt();
+            if (value == 0) {break; }
+            switch (value) {
+                case 1:
+                    controller.prepareEmployee();
+                    break;
+                case 2:
+                    controller.showEmployee();
+                    break;
+            }
+
         }
-        System.out.println(EmployeeDatabase.employeeList);
     }
 }

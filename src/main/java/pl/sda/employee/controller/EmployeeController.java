@@ -32,6 +32,6 @@ public class EmployeeController {
     }
 
     public void showEmployee(){
-
+        employeeView.showAllEmployees();
     }
 }
